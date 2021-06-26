@@ -1,0 +1,91 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 16px 0;
+  font: size 14px;
+
+  & p {
+    flex: 1;
+    color: #29292e;
+  }
+
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid #835afd;
+
+    .info-pergunta {
+      .author {
+        color: #29292e;
+      }
+    }
+  }
+  &.answered {
+    background: #dbdcdd;
+    border: none;
+    .info-pergunta {
+      .author {
+        color: #737380;
+      }
+    }
+  }
+
+  .info-pergunta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+
+    .author {
+      display: flex;
+      align-items: center;
+      color: #737380;
+
+      .avatar {
+        border-radius: 9999px;
+        overflow: hidden;
+        z-index: 2;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      background: transparent;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.7);
+      }
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        color: #737380;
+      }
+
+      &.liked {
+        color: #835afd;
+
+        svg path {
+          stroke: #835afd;
+        }
+      }
+    }
+  }
+}
